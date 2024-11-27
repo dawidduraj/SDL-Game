@@ -7,7 +7,7 @@ int engine_init(engine *engine, const char *title, int width, int height)
 {
 	printf("Initialising engine...");
 	// Init SDL2
-	if (!SDL_Init(SDL_INIT_EVERYTHING))
+	if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
 	{
 		printf("ERROR! SDL_Init: %s\n", SDL_GetError());
 		return 0;
