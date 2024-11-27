@@ -1,7 +1,8 @@
 #include <glad/glad.h>
 #include <SDL.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include "include/engine.h"
+
 
 int main(int argc, char* argv[]) {
     // Initialize SDL2 with video subsystem
@@ -43,6 +44,8 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    glViewport(0, 0, 800, 600);
+
     // Output OpenGL version to verify success
     printf("OpenGL Version: %s\n", glGetString(GL_VERSION));
 
@@ -72,3 +75,4 @@ int main(int argc, char* argv[]) {
     SDL_Quit();
     return EXIT_SUCCESS;
 }
+
