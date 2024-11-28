@@ -3,6 +3,8 @@
 
 #include <SDL2/SDL.h>
 
+// TODO: Naming conventions
+
 // Constants
 #define ENGINE_DEFAULT_WIDTH 640
 #define ENGINE_DEFAULT_HEIGHT 480
@@ -23,4 +25,6 @@ typedef struct
 int engine_init(engine *engine);
 void engine_gameloop(engine *engine);
 void engine_quit(engine *engine);
+void engine_vertexspecification();
+void creategraphicspipeline();
 #endif
