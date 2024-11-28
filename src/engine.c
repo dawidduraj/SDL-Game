@@ -38,6 +38,7 @@ int engine_init(engine *engine)
 		engine_quit(engine);
 		return 0;
 	}
+	engine->glContext = glContext;
 	// Load OpenGL functions using GLAD
 	if (!gladLoadGLLoader((GLADloadproc)SDL_GL_GetProcAddress))
 	{
