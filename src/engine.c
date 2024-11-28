@@ -103,6 +103,7 @@ void engine_gameloop(engine *engine)
 		glBindBuffer(GL_ARRAY_BUFFER, g_VBO);
 
 		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glUseProgram(0);
 		// Swap buffers
 		SDL_GL_SwapWindow(engine->window);
 	}
@@ -168,6 +169,7 @@ GLuint CompileShader(const GLuint type, const char *source)
 }
 GLuint createshaderprogram(const char *vertexShader, const char *fragmentShader)
 {
+	// TODO: read from file
 	GLuint shaderprogram = glCreateProgram();
 	GLuint compiledVertexShader = CompileShader(GL_VERTEX_SHADER, vertexShader);
 	GLuint compiledFragmentShader = CompileShader(GL_FRAGMENT_SHADER, fragmentShader);
