@@ -3,9 +3,10 @@
 #include <stdio.h>
 #include "include/engine.h"
 
-int engine_init(engine *engine, const char *title, int width, int height)
+// TODO: Overload with given title, height, wight
+int engine_init(engine *engine)
 {
-	printf("Initialising engine...");
+	printf("Initialising engine...\n");
 	// Init SDL2
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
 	{
@@ -19,7 +20,8 @@ int engine_init(engine *engine, const char *title, int width, int height)
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
 	// Create window
-	SDL_Window *window = SDL_CreateWindow(engine->title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, engine->width, engine->height, SDL_WINDOW_OPENGL);
+	// TODO: Allow for changing attributes
+	SDL_Window *window = SDL_CreateWindow(ENGINE_DEFAULT_TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, ENGINE_DEFAULT_WIDTH, ENGINE_DEFAULT_HEIGHT, SDL_WINDOW_OPENGL);
 	if (!window)
 	{
 		printf("ERROR! SDL_Window: %s\n", SDL_GetError());

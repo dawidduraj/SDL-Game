@@ -3,6 +3,7 @@ project(sdl-game)
 
 # Find the SDL2 package 
 find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIRS})
 
 # GLAD
 include_directories(${CMAKE_SOURCE_DIR}/lib/glad/include)
@@ -15,4 +16,4 @@ file(GLOB SOURCES "src/*.c")
 add_executable(sdl-game ${SOURCES})
 
 # Link SDL2 to your executable
-target_link_libraries(sdl-game PRIVATE SDL2::SDL2main SDL2::SDL2 glad)
+target_link_libraries(sdl-game ${SDL2_LIBRARIES} glad)

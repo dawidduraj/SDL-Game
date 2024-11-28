@@ -4,8 +4,8 @@
 #include <SDL2/SDL.h>
 
 // Constants
-#define ENGINE_DEFAULT_WIDTH 800
-#define ENGINE_DEFAULT_HEIGHT 600
+#define ENGINE_DEFAULT_WIDTH 640
+#define ENGINE_DEFAULT_HEIGHT 480
 #define ENGINE_DEFAULT_TITLE "SDL Game v0.1"
 
 // Structs
@@ -20,7 +20,7 @@ typedef struct
 } engine;
 
 // Functions
-int engine_init(engine *engine, const char *title, int width, int height);
+int engine_init(engine *engine);
 void engine_gameloop(engine *engine);
 void engine_quit(engine *engine);
 #endif
